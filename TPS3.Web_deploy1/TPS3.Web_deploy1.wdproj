@@ -1,0 +1,89 @@
+﻿<!-- 
+  Microsoft Visual Studio 2008 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkID=104956
+
+-->
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9167CEE9-01E7-4915-B0A8-33362765A79A}</ProjectGuid>
+    <SourceWebPhysicalPath>..\TPS3.Web</SourceWebPhysicalPath>
+    <SourceWebProject>{CCFB1F05-7632-4F3E-8F9E-9DBB76E1A2C7}|C:\Projects\TPS3.Web</SourceWebProject>
+    <SourceWebVirtualPath>/TPS3.Web</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\Debug</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>TPS3.Web_deploy1</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\Release</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>TPS3.Web_deploy1</SingleAssemblyName>
+    <UseWebConfigReplacement>true</UseWebConfigReplacement>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TPS\Trunk\TPS3\TPS3.Core\TPS3.Core.csproj">
+      <Project>{01578A67-A674-42A3-B634-7127AA835B38}</Project>
+      <Name>TPS3.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TPS\Trunk\TPS3\TPS3.Data\TPS3.Data.csproj">
+      <Project>{89C22B29-43F6-4CB2-A86A-69482D0EEB00}</Project>
+      <Name>TPS3.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TPS\Trunk\TPS3\TPS3.r1.BLL\TPS3.BLL.csproj">
+      <Project>{37423539-8239-4D15-99BF-5440ECD40DBB}</Project>
+      <Name>TPS3.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TPS\Trunk\TPS\ADWebBrowser\ActiveDirectoryHelperBLL.cs\ActiveDirectorySearchBLL.csproj">
+      <Project>{695E6001-627D-418A-8AAB-4B04EF7A33DD}</Project>
+      <Name>ActiveDirectorySearchBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trunk\ComputraceFileUpload\ClassLibrary1\CAESDO.Computrace.Core\CAESDO.Computrace.Core.csproj">
+      <Project>{4C36C095-0AEB-4A06-BBB0-5FE51A8FE90E}</Project>
+      <Name>CAESDO.Computrace.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trunk\ComputraceFileUpload\ClassLibrary1\CAESDO.Computrace.Utilities\CAESDO.Computrace.Utilities.csproj">
+      <Project>{84C08DCB-421B-4250-A554-F340507BC311}</Project>
+      <Name>CAESDO.Computrace.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trunk\ComputraceFileUpload\ClassLibrary1\ComputraceFileUpload.BLL\ComputraceFileUpload.BLL.csproj">
+      <Project>{06CDC3B8-3C58-4850-8CA7-FE6ECB11A273}</Project>
+      <Name>ComputraceFileUpload.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <WebConfigReplacementFiles Include="myAppSettings.config">
+      <Section>appSettings</Section>
+    </WebConfigReplacementFiles>
+    <WebConfigReplacementFiles Include="myConnectionStrings.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v9.0\Microsoft.WebDeployment.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.WebDeployment.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="BeforeMerge">
+  </Target>
+  <Target Name="AfterMerge">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

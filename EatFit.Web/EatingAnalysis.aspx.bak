@@ -1,0 +1,329 @@
+<%@ Page Language="C#" Debug="true" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="EatingAnalysis.aspx.cs" Inherits="Intro" Title="EatFit - Eating Analysis" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxControlToolkit" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="EatFitTest" Runat="Server">
+<script language="javascript" type="text/javascript" src="modalbox_formatted.js"></script>
+<script language="javascript" type="text/javascript" src="JScript.js"></script>
+    <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+        <asp:View ID="View1" runat="server"><br />
+            <div class="headfont">Welcome!</div><br />
+            Want to find out how your diet rates?<br />
+            Just start by answering the questions below.<br />
+		    <map name="Map" id="Map">
+                <area shape="rect" coords="434,16,485,38" href="Default.aspx" alt="Home" />
+            </map>
+            <br />
+            <table border="0" cellpadding="5" cellspacing="0" summary="Information Table (Name, Age, Gender)" class="tablestyle" >
+                <tr>
+                    <td class="lefttblstyle" align="right" >
+                        <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label>&nbsp;</td>
+                    <td style="border-bottom: solid 1px #7ca8bf"> 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="NameBox"
+                            Display="Static" ErrorMessage="Please enter your name." InitialValue="" ></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:TextBox ID="NameBox" runat="server" ReadOnly="True" ></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lefttblstyle" align="right">
+    Age:&nbsp;</td>
+                    <td style="border-bottom: solid 1px #7ca8bf">
+                        
+            <asp:DropDownList ID="AgeDropDown" runat="server" DataSourceID="AgeDataSource" DataTextField="age" DataValueField="age" AppendDataBoundItems="True" Enabled="False">
+                <asp:ListItem Value="0">0</asp:ListItem>
+            </asp:DropDownList><asp:ObjectDataSource ID="AgeDataSource" runat="server" SelectMethod="loadAgeField"
+                TypeName="DataAccess"></asp:ObjectDataSource>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 155px; height: 16px; border-right: solid 1px #7ca8bf; background-color:#EEEEEE;" align="right">
+    Gender:&nbsp;</td>
+                    <td style="height: 16px">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="RadioButtonList1"
+                            Display="Static" ErrorMessage="Please choose Male or Female." InitialValue=""
+                             Width="100%"></asp:RequiredFieldValidator>
+    <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="1px" Width="222px" Enabled="False" >
+        <asp:ListItem Value="1" >Male</asp:ListItem>
+        <asp:ListItem Value="0">Female</asp:ListItem>
+    </asp:RadioButtonList></td>
+                </tr>
+            </table>
+            <br />
+            <asp:Button ID="btnEditUser" runat="server" PostBackUrl="~/UserInfo.aspx" Text="Edit User" /><br />
+    <br />
+            Which of these are most important to you:<br />
+            <asp:Label ID="lblTwoChoices" runat="server" Text="(check two choices)"></asp:Label><br />
+            <div class="tablestyle">
+            &nbsp;
+                <asp:CheckBoxList ID="GoalsLists" runat="server" DataSourceID="GoalsListDataSource" DataTextField="goal_name" DataValueField="goal_id">
+            </asp:CheckBoxList>&nbsp;
+                <asp:ObjectDataSource ID="GoalsListDataSource" runat="server"
+                SelectMethod="LoadGoals" TypeName="DataAccess"></asp:ObjectDataSource>
+                <br />
+            </div>
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Next" OnClick="Button1_Click" /></asp:View>
+        <asp:View ID="View2" runat="server">
+            <br />
+            Click on <strong>Add Food</strong> to begin.<br />
+            <br />
+            <asp:GridView ID="SelectedFoodsGridView" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" EmptyDataText="No Foods Selected" OnRowDeleting="SelectedFoodsGridView_RowDeleting" OnRowUpdating="SelectedFoodsGridView_RowUpdating" OnRowDataBound="SelectedFoodsGridView_RowDataBound" CssClass="tablestyle" Width="100%">
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <RowStyle BackColor="#EEF7FC" ForeColor="#333333" />
+                <EditRowStyle BackColor="#EEEEEE"/>
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <HeaderStyle BackColor="#EEEEEE" Font-Bold="True" ForeColor="Black" CssClass="botbord" HorizontalAlign="Left" />
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <Columns>
+                    <asp:BoundField AccessibleHeaderText="Name" DataField="Name" HeaderText="Name" ReadOnly="True" />
+                    <asp:TemplateField AccessibleHeaderText="Quantity" HeaderText="Quantity">
+                        <ItemTemplate>
+                            <asp:TextBox ID="tbFoodQuantity" runat="server" Text='<%# Eval("Quantity") %>'></asp:TextBox>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField AccessibleHeaderText="Units" HeaderText="Units">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="hlinkUnits" runat="server" 
+                                Text='<%# Eval("Units") %>' NavigateUrl='<%# String.Format("images/servings/{0}.jpg", Eval("Picture")) %>' Target="_blank" >
+                            </asp:HyperLink>
+                            <asp:Label ID="lblUnits" runat="server" Text='<%# Eval("Units") %>' Visible="false"></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:CommandField ShowDeleteButton="True" />
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="popFoodGrid"
+                TypeName="DataAccess" ></asp:ObjectDataSource>
+            &nbsp;&nbsp;
+            <asp:Label ID="lblMinOneFoodRequired" runat="server" ForeColor="Red" Text="<P>Please add at least one food item.</P>"
+                Visible="False"></asp:Label><br />
+            &nbsp;<asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Add Food" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Done Adding Foods" /></asp:View>
+        <asp:View ID="View3" runat="server">
+        <br /><div class="tableclass" style="padding: 15px;">
+            <div class="headfont">Available Food List</div>
+            <br />
+            find food name:
+            <asp:TextBox ID="FoodSearchBox" runat="server" Width="300"></asp:TextBox>
+            <AjaxControlToolkit:AutoCompleteExtender runat="server" ID="AutoCompleteExtender1" TargetControlID="FoodSearchBox" ServiceMethod="GetFoodList" ServicePath="FoodList.asmx"></AjaxControlToolkit:AutoCompleteExtender>
+            <asp:Button ID="FindFoodButton" runat="server" OnClick="FindFoodButton_Click" Text="Find" /><br />
+            <br />
+            food list:<br />
+            <asp:ListBox ID="ListBox1" runat="server" Rows="10" DataSourceID="FoodListDataSource" DataTextField="foodname" DataValueField="foodid" CausesValidation="True" ValidationGroup="vgAdd">
+            </asp:ListBox><asp:ObjectDataSource ID="FoodListDataSource" runat="server" SelectMethod="GetFilteredFoodList"
+                TypeName="DataAccess">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="FoodSearchBox" DefaultValue="" Name="matchingText"
+                        PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            <asp:RequiredFieldValidator ID="lblPleaseSelectAFoodItem" runat="server" ControlToValidate="ListBox1"
+                ErrorMessage="Please select a food item to add." ValidationGroup="vgAdd"></asp:RequiredFieldValidator>
+            <br />
+            <asp:Button ID="AddButton" runat="server" OnClick="AddButton_Click" Text="Add" ValidationGroup="vgAdd" />
+            <asp:Button ID="btnCancelFoodChoice" runat="server" Text="Cancel" CommandArgument="2" CommandName="Previous" OnClick="btnCancelFoodChoice_Click" /></div></asp:View>
+        <asp:View ID="View4" runat="server">
+            <div class="headfont">Confirmation List</div><br />
+            <asp:GridView ID="ReviewGridView" runat="server" AutoGenerateColumns="false" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="ObjectDataSource2" CssClass="tablestyle" Width="100%">
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <RowStyle BackColor="#EEF7FC" ForeColor="#333333" />
+                <EditRowStyle BackColor="#999999" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <HeaderStyle BackColor="#EEEEEE" Font-Bold="True" ForeColor="Black" CssClass="botbord" HorizontalAlign="Left" />
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:BoundField AccessibleHeaderText="Name" DataField="Name" HeaderText="Name" ReadOnly="True" />
+                <asp:BoundField AccessibleHeaderText="Quantity" DataField="Quantity" HeaderText="Quantity" ReadOnly="True" />
+                <asp:BoundField AccessibleHeaderText="Units" DataField="Units" HeaderText="Units" ReadOnly="True" />
+            </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="popFoodGrid"
+                TypeName="DataAccess"></asp:ObjectDataSource>
+            <br />
+            <asp:Button ID="btnPreviousConfirmList" runat="server" Text="Back" OnClick="btnPreviousConfirmList_Click" />
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Next" /></asp:View>
+         <asp:View ID="View5" runat="server">
+                <div class="headfont">Habits Questions</div>
+             <br />
+             <table class="tablestyle" cellpadding="10" cellspacing="0">
+                <tr style="height:50px;">
+                    
+                    <td class="botbord" style="height: 50px">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="dlistEatingHabitsQ1"
+                            ErrorMessage="Please choose at least 0-1." InitialValue="-1" ValidationGroup="HabitsQuestions"></asp:RequiredFieldValidator><br />
+                        How many glasses of water did you drink yesterday?</td>
+                    <td style="width: 63px; height: 50px;" align="right" class="botbord"><asp:DropDownList ID="dlistEatingHabitsQ1" runat="server" >
+                        <asp:ListItem Selected="True" Value="-1">Select a value</asp:ListItem>
+                            <asp:ListItem Value="0">0-1</asp:ListItem>
+                            <asp:ListItem Value="1">2</asp:ListItem>
+                            <asp:ListItem Value="2">3</asp:ListItem>
+                            <asp:ListItem Value="3">4</asp:ListItem>
+                            <asp:ListItem Value="4">5+</asp:ListItem>
+                        </asp:DropDownList></td>
+                </tr>
+                <tr style="height:50px;">
+                   
+                    <td class="botbord">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="dlistEatingHabitsQ2"
+                            ErrorMessage="Please choose at least 0-1." InitialValue="-1" ValidationGroup="HabitsQuestions"></asp:RequiredFieldValidator><br />
+                        How many meals or snacks did you eat yesterday, including beverages and candy?</td>
+                    <td style="width: 63px" align="right" class="botbord"><asp:DropDownList ID="dlistEatingHabitsQ2" runat="server">
+                            <asp:ListItem Selected="True" Value="-1">Select a value</asp:ListItem>
+                            <asp:ListItem Value="0">0-1</asp:ListItem>
+                            <asp:ListItem Value="1">2</asp:ListItem>
+                            <asp:ListItem Value="2">3</asp:ListItem>
+                            <asp:ListItem Value="3">4</asp:ListItem>
+                            <asp:ListItem Value="4">5+</asp:ListItem>
+                        </asp:DropDownList></td>
+                </tr>
+                <tr style="height:50px;">
+                    
+                    <td class="botbord">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="dlistEatingHabitsQ3"
+                            ErrorMessage="Please choose at least 0-1." InitialValue="-1" ValidationGroup="HabitsQuestions"></asp:RequiredFieldValidator><br />
+                        How many times did you eat when your hunger rating was a 3 or 4?</td>
+                    <td style="width: 63px" align="right" class="botbord"><asp:DropDownList ID="dlistEatingHabitsQ3" runat="server">
+                            <asp:ListItem Selected="True" Value="-1">Select a value</asp:ListItem>
+                            <asp:ListItem Value="0">0-1</asp:ListItem>
+                            <asp:ListItem Value="1">2</asp:ListItem>
+                            <asp:ListItem Value="2">3</asp:ListItem>
+                            <asp:ListItem Value="3">4</asp:ListItem>
+                            <asp:ListItem Value="4">5+</asp:ListItem>
+                        </asp:DropDownList></td>
+                </tr>
+                <tr style="height:50px;">
+                    
+                    <td class="botbord" style="height: 50px">
+                    <asp:RequiredFieldValidator id="RequiredFieldValidator4" ControlToValidate="rbtnlistEatingHabitsQ4" Display="Static" ErrorMessage="Please choose Yes or No" InitialValue="" Width="31%" runat="server" ValidationGroup="HabitsQuestions"></asp:RequiredFieldValidator><br />
+                        Did you eat breakfast yesterday?</td>
+                    <td class="botbord" style="width: 63px; height: 50px;" align="right">
+                        &nbsp;<asp:RadioButtonList ID="rbtnlistEatingHabitsQ4" runat="server" RepeatDirection="Horizontal">
+                            <asp:ListItem Value="4">Yes</asp:ListItem>
+                            <asp:ListItem Value="0">No</asp:ListItem>
+                        </asp:RadioButtonList></td>
+                </tr>
+                <tr style="height:50px;">
+                    
+                    <td >
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="rbtnlistEatingHabitsQ5"
+                            Display="Static" ErrorMessage="Please choose Yes or No" InitialValue="" ValidationGroup="HabitsQuestions"
+                            Width="31%"></asp:RequiredFieldValidator><br />
+                        Did you eat while watching television yesterday?</td>
+                    <td style="width: 63px" align="right"><asp:RadioButtonList ID="rbtnlistEatingHabitsQ5" runat="server" RepeatDirection="Horizontal">
+                            <asp:ListItem Value="4">Yes</asp:ListItem>
+                            <asp:ListItem Value="0">No</asp:ListItem>
+                        </asp:RadioButtonList></td>
+                </tr>
+             </table>
+             <br />
+             <br /><asp:Button ID="btnPreviousHabits" runat="server" Text="Back" OnClick="btnPreviousHabits_Click" />
+                <asp:Button ID="HabitsNextButton" runat="server" Text="Next" OnClick="HabitsNextButton_Click" ValidationGroup="HabitsQuestions" /></asp:View>
+            <asp:View ID="View6" runat="server"><br /><div class="tablestyle" style="padding: 15px;">
+                <asp:Label ID="lblNameSub" runat="server" Text="Name"></asp:Label>,<br />
+                <br />
+                <asp:Label ID="lblKudo" runat="server" Text="kudo"></asp:Label><br />
+                <br />
+                <asp:Label ID="lblMin1" runat="server" Text="min1"></asp:Label><br />
+                <br />
+                <asp:Label ID="lblMin2" runat="server" Text="Min2"></asp:Label><br />
+                <br />
+                Which of these
+                eating areas would you like to work on?<br />
+                &nbsp;<asp:RadioButtonList ID="rbtnlistEatingArea" runat="server" DataSourceID="EatingAreaDataSource"
+                    DataTextField="nutrient_name" DataValueField="nutrient_id" RepeatDirection="Horizontal" >
+                </asp:RadioButtonList><asp:ObjectDataSource ID="EatingAreaDataSource" runat="server"
+                    SelectMethod="LoadEatingArea" TypeName="DataAccess"></asp:ObjectDataSource>
+                <asp:Label ID="lblErrorEatingAreas" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label><br />
+                <br /><asp:Button ID="btnPreviousEatingAreas" runat="server" Text="Back" OnClick="btnPreviousEatingAreas_Click" />
+                <asp:Button ID="EatingAreaNextButton" runat="server" Text="Next" OnClick="EatingAreaNextButton_Click" /><br /></div>
+            </asp:View>
+            <asp:View ID="View7" runat="server"><br />
+                <div class="tablestyle" style="padding:10px;"><br />
+                <div class="headfont">Great Choice!</div><br />
+                    <asp:Label ID="lblIsMajorGoal" runat="server" Text="Major Label"></asp:Label>
+                    is a major goal.<br />
+                <br />
+                To accomplish this you must set minor goals to help you get there one step at a
+                time.<br />
+                <br />
+                Which minor goal would you like to work on?<br />
+                <br />
+                <asp:RadioButtonList ID="MinorGoalList" runat="server" DataSourceID="MinorGoalsDataSource" DataTextField="before_text" DataValueField="goal_statement_id" >
+                </asp:RadioButtonList><asp:ObjectDataSource ID="MinorGoalsDataSource" runat="server"
+                    SelectMethod="LoadMinorGoals" TypeName="DataAccess" ></asp:ObjectDataSource>
+                <asp:Label ID="lblErrorMinorGoals" runat="server" EnableViewState="False" ForeColor="Red"></asp:Label><br />
+                <br /><asp:Button ID="btnPreviousMinorGoals" runat="server" Text="Back" OnClick="btnPreviousMinorGoals_Click" />
+                <asp:Button ID="MinorGoalNextButton" runat="server" Text="Next" OnClick="MinorGoalNextButton_Click"/></div></asp:View>
+            <asp:View ID="View8" runat="server">
+                <br />
+            <div  id="Div1" class="tablestyle" style="padding: 15px;">
+                <br />
+                
+<table border="0" cellpadding="2" cellspacing="0" align="center" width="440"><tr><td style="width: 520px; height: 366px;">
+<div  id="print_area" class="tablestyle">
+<table border="1" cellpadding="0" cellspacing="0" align="center" width="440"><tr><td style="width: 520px; height: 366px;">
+    <table border="0" width="440" cellpadding="2" cellspacing="0" align="center">
+      <tr>
+        <td width="440" height="59" colspan="2">
+        <img src="images/eating_contract2.jpg" width="440" height="59" id="imgEatingContractTitle" alt="Eating Contract" />
+        </td></tr>
+                <tr>
+        <td width="100%" class="cinfo3" colspan="2" style="font-size: 12pt; height: 100px; font-family: Verdana;"><br />
+            &nbsp; &nbsp;&nbsp;
+          I,&nbsp;<span class="bold"><asp:Substitution ID="NameSub" runat="server" MethodName="SetNameSub" /></span>, promise to try my best to reach my
+          major goal
+          of <span class="bold"><asp:Label ID="lblContractMajorGoal" runat="server"
+                    Text="Label" Font-Bold="False"></asp:Label>
+          </span> by <span class="bold">
+                <asp:Label ID="lblContractMinorGoal" runat="server" Text="Label" Font-Bold="False"></asp:Label></span><br />
+            &nbsp; &nbsp;&nbsp;
+                This is because <span class="bold">
+                <asp:Label ID="lblContractWhy" runat="server" Text="Label" Font-Bold="False"></asp:Label></span>
+          <br />&nbsp;</td>
+      </tr>
+                         <tr>
+        <td width="50%" class="cinfo3" align="center" style="font-size: 12pt; height: 85px; font-family: Verdana;"><span class="bold">__________________</span><br />
+          Your Signature</td>
+        <td width="50%" class="cinfo3" align="center" style="font-size: 12pt; height: 85px; font-family: Verdana;"><span class="bold" style="font-size: 12pt; font-family: Verdana;">__________________</span><br />
+          Friend's Signature</td>
+      </tr>
+      <tr>
+        <td width="50%" class="cinfo3" align="center" style="font-size: 12pt; font-family: Verdana;
+            height: 81px;"><br /><span class="bold">
+          __________________</span><br />
+          Parent's Signature</td>
+        <td width="50%" class="cinfo3" align="center" style="font-size: 12pt; font-family: Verdana; height: 81px;">&nbsp;</td>
+      </tr>
+    </table>
+    </td></tr></table></div>
+    </td></tr></table>
+    
+                <br />
+                <br />
+                <span class="bold"></span>
+                <br />
+                <asp:Button ID="btnPrintContract" runat="server" OnClick="btnPrintContract_Click" Text="Print Contract" CommandArgument="print_area" CommandName="getPrint" OnClientClick="getPrint('print_area')" />
+                <asp:Button ID="RestartButton" runat="server" OnClick="resetAnalysis"
+                    Text="Start Over" /></div></asp:View> 
+    </asp:MultiView>
+    <br />
+    <br />
+    <asp:Button ID="btnHelp" runat="server" Text="Help" />
+    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+    &nbsp;&nbsp;
+    &nbsp;
+      <AjaxControlToolkit:AutoCompleteExtender
+                runat="server" 
+                Enabled="false"
+                ID="autoComplete1" 
+                TargetControlID="FoodSearchBox"
+                ServicePath="foodList.asmx"
+                ServiceMethod="GetFoodList"
+                MinimumPrefixLength="2" 
+                CompletionInterval="1000"
+                EnableCaching="true"
+                CompletionSetCount="12" />  
+</asp:Content>
+

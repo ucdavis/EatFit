@@ -1,0 +1,32 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A program to analyze and teach children good eating habits" />
+<meta name="keywords" content="eat fit healthy recipes eating analysis exercise how to success stories games challenge tips" />
+<meta name="author" content="Eat Fit" />
+    <title>Eat Fit</title>
+<link href="eatfitstyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="modalbox.css" type="text/css" /> 
+<script type="text/javascript" src="eatfitjava.js"></script>
+</head>
+<body onload="MM_preloadImages('images/sidebar2_04.gif','images/sidebar2_07.gif','images/sidebar2_05.gif','images/sidebar2_06.gif','images/sidebar_07.gif','images/sidebar_08.gif','images/sidebar2_09.gif')">
+<div id="wrapper">
+
+
+            
+    <form id="form1" runat="server">
+        <Ajax:ScriptManager ID="ScriptManager1" runat="server">
+        </Ajax:ScriptManager>
+    <div>
+        <asp:contentplaceholder id="EatFitTest" runat="server">
+            &nbsp;</asp:contentplaceholder>
+    </div>
+    </form>
+
+
+</div>
+
+</body>
+</html>
