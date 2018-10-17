@@ -26,14 +26,14 @@
           </button>
         </div> -->
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li id="portaltab-index_html" class="selected"><a href="http://eatfit.ucdavis.edu" title="">Home</a></li>
-            <li id="portaltab-ea" class="plain"><a href="http://eatfit.ucdavis.edu/ea" title="">Eating Analysis</a></li>
-            <li id="portaltab-goals" class="plain"><a href="http://eatfit.ucdavis.edu/goals" title="">My goals</a></li>
-            <li id="portaltab-recipes" class="plain"><a href="http://eatfit.ucdavis.edu/recipes" title="">Recipes</a></li>
-            <li id="portaltab-exercises" class="plain"><a href="http://eatfit.ucdavis.edu/exercises" title="">Exercises</a></li>
-            <li id="portaltab-about" class="plain"><a href="http://eatfit.ucdavis.edu/about" title="">About</a></li>
-          </ul></div><!--/.nav-collapse -->
+        <ul class="nav navbar-nav">
+          <li id="portaltab-index_html" class="plain"><a href="http://eatfit.net" title="">Home</a></li>
+          <li id="portaltab-ea" class="selected"><a href="http://eatfit.ucdavis.edu/ea" title="">Explore what you eat</a></li>
+          <li id="portaltab-goals" class="plain"><a href="https://eatfit.net/goals/setting-goals" title="">My goals</a></li>
+          <li id="portaltab-recipes" class="plain"><a href="https://eatfit.net/recipes/" title="">Recipes</a></li>
+          <li id="portaltab-exercises" class="plain"><a href="https://eatfit.net/exercises/ex-menu" title="">Exercises</a></li>
+          <li id="portaltab-about" class="plain"><a href="https://eatfit.net/about/teachers" title="">About</a></li>
+        </ul></div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -42,13 +42,13 @@
         <div class="leftcol col-md-3">
         <nav>
           <ul>
-            <li><a href="http://eatfit.ucdavis.edu/ea/analysis">eating analysis</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/Eatfit/ea/about">about the analysis</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/Eatfit/ea/help">need help?</a></li>
+
+            <li><a href="https://eatfit.net/about/teachers">about the analysis</a></li>
+
           </ul>
         </nav>
       </div><!-- /.leftcol -->
-      
+
       <div class="content col-md-9">
         <div class="header">
           <img src="~/images/eatinganalysis.jpg" alt="" />
@@ -96,7 +96,7 @@
     TextStrengthDescriptions="Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.;Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces."
     CalculationWeightings="50;15;15;20">
                                     </AjaxControlToolkit:PasswordStrength>
-                                
+
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ValidationExpression="(?=^.{7,30}$)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+}{&quot;:;'?/>.<,])(?!.*\s).*$" ValidationGroup="vgPassword" Width="368px" ControlToValidate="Password">Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.</asp:RegularExpressionValidator></td>
                         </tr>
                         <tr>
@@ -159,7 +159,7 @@
                                     DataSourceID="AgeDataSource" DataTextField="age" DataValueField="age" AppendDataBoundItems="True">
                                     <asp:ListItem Value="-1">0</asp:ListItem>
                                 </asp:DropDownList>
-                                
+
                                 <asp:ObjectDataSource ID="AgeDataSource" runat="server" OnSelecting="AgeDataSource_Selecting"
                                     SelectMethod="loadAgeField" TypeName="DataAccess"></asp:ObjectDataSource>
                             </td>
@@ -228,7 +228,7 @@
       </div><!--/.footer-->
     </div><!--/.row-->
 
-    
+
                 </CustomNavigationTemplate>
             </asp:CreateUserWizardStep>
             <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
@@ -252,4 +252,3 @@
         HeaderText="*required fields: " Height="12px" ValidationGroup="CreateUserWizard1" />
 
 </asp:Content>
-

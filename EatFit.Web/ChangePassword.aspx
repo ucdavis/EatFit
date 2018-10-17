@@ -22,14 +22,14 @@
           </button>
         </div> -->
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li id="portaltab-index_html" class="selected"><a href="http://eatfit.ucdavis.edu" title="">Home</a></li>
-            <li id="portaltab-ea" class="plain"><a href="http://eatfit.ucdavis.edu/ea" title="">Eating Analysis</a></li>
-            <li id="portaltab-goals" class="plain"><a href="http://eatfit.ucdavis.edu/goals" title="">My goals</a></li>
-            <li id="portaltab-recipes" class="plain"><a href="http://eatfit.ucdavis.edu/recipes" title="">Recipes</a></li>
-            <li id="portaltab-exercises" class="plain"><a href="http://eatfit.ucdavis.edu/exercises" title="">Exercises</a></li>
-            <li id="portaltab-about" class="plain"><a href="http://eatfit.ucdavis.edu/about" title="">About</a></li>
-          </ul></div><!--/.nav-collapse -->
+        <ul class="nav navbar-nav">
+          <li id="portaltab-index_html" class="plain"><a href="http://eatfit.net" title="">Home</a></li>
+          <li id="portaltab-ea" class="selected"><a href="http://eatfit.ucdavis.edu/ea" title="">Explore what you eat</a></li>
+          <li id="portaltab-goals" class="plain"><a href="https://eatfit.net/goals/setting-goals" title="">My goals</a></li>
+          <li id="portaltab-recipes" class="plain"><a href="https://eatfit.net/recipes/" title="">Recipes</a></li>
+          <li id="portaltab-exercises" class="plain"><a href="https://eatfit.net/exercises/ex-menu" title="">Exercises</a></li>
+          <li id="portaltab-about" class="plain"><a href="https://eatfit.net/about/teachers" title="">About</a></li>
+        </ul></div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -38,13 +38,13 @@
         <div class="leftcol col-md-3">
         <nav>
           <ul>
-            <li><a href="http://eatfit.ucdavis.edu/ea/analysis">eating analysis</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/ea/about">about the analysis</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/ea/help">need help?</a></li>
+
+            <li><a href="https://eatfit.net/about/teachers">about the analysis</a></li>
+
           </ul>
         </nav>
       </div><!-- /.leftcol -->
-      
+
       <div class="content col-md-9">
         <div class="header">
           <img src="~/images/eatinganalysis.jpg" alt="" />
@@ -72,6 +72,5 @@
         If any of these links no longer work, please let us know at <a href="mailto:eatfit@ucdavis.edu">eatfit@ucdavis.edu</a> </p>
       </div><!--/.footer-->
     </div><!--/.row-->
-    
-</asp:Content>
 
+</asp:Content>
