@@ -85,17 +85,7 @@
                             <td>
                                 <asp:TextBox ID="Password" runat="server" TextMode="Password" ValidationGroup="vgPassword" CausesValidation="True" ToolTip="Must be at least 7 chars, include 1 special char (!_.-*@#$%, etc), and contain no spaces."></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                    ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>&nbsp;<AjaxControlToolkit:PasswordStrength
-                                        ID="PasswordStrength1" runat="server" TargetControlID="Password" DisplayPosition="RightSide"
-    StrengthIndicatorType="Text"
-    PreferredPasswordLength="7"
-    PrefixText=""
-    MinimumNumericCharacters="0"
-    MinimumSymbolCharacters="1"
-    RequiresUpperAndLowerCaseCharacters="false"
-    TextStrengthDescriptions="Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.;Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces."
-    CalculationWeightings="50;15;15;20">
-                                    </AjaxControlToolkit:PasswordStrength>
+                                    ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>&nbsp;
 
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ValidationExpression="(?=^.{7,30}$)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+}{&quot;:;'?/>.<,])(?!.*\s).*$" ValidationGroup="vgPassword" Width="368px" ControlToValidate="Password">Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.</asp:RegularExpressionValidator></td>
                         </tr>
