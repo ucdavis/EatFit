@@ -68,7 +68,7 @@
                                     <p>Please plan to enter all of your foods at one time. Once you start this process, data cannot be viewed or altered again later.</p>
                                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CreateUser.aspx">Create new user</asp:HyperLink> <br />
                                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ChangePassword.aspx">Change Password</asp:HyperLink><br />
-                                    <!--<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>-->
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
         
                                 </td>
                             </tr>
