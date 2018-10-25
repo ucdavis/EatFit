@@ -1,0 +1,189 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CreateUser.aspx.cs" Inherits="CreateUser" Title="Create New User" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="EatFitTest" Runat="Server">
+    <AjaxControlToolkit:NoBot ID="NoBot1" runat="server" />
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/EatingAnalysis.aspx" OnCreatedUser="CreateUserWizard1_CreatedUser" OnCreateUserError="CreateUserWizard1_CreateUserError" >
+        <WizardSteps>
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
+                <ContentTemplate>
+                    <table border="0">
+                        <tr>
+                            <td align="left" colspan="2">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;Sign Up for Your New Account</td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label></td>
+                            <td style="width: 373px">
+                                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                    ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                <asp:Label ID="lblUsernameError" runat="server" EnableViewState="False" ForeColor="Red" Visible="False" Width="194px">Username already exists.  Please select another.</asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label><br />
+                                <br />
+                                <br />
+                            </td>
+                            <td style="width: 373px">
+                                <asp:TextBox ID="Password" runat="server" TextMode="Password" ValidationGroup="vgPassword" CausesValidation="True" ToolTip="Must be at least 7 chars, include 1 special char (!_.-*@#$%, etc), and contain no spaces."></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                    ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>&nbsp;<AjaxControlToolkit:PasswordStrength
+                                        ID="PasswordStrength1" runat="server" TargetControlID="Password" DisplayPosition="RightSide"
+    StrengthIndicatorType="Text"
+    PreferredPasswordLength="7"
+    PrefixText=""
+    MinimumNumericCharacters="0"
+    MinimumSymbolCharacters="1"
+    RequiresUpperAndLowerCaseCharacters="false"
+    TextStrengthDescriptions="Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.;Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces."
+    CalculationWeightings="50;15;15;20">
+                                    </AjaxControlToolkit:PasswordStrength>
+                                <br />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ValidationExpression="(?=^.{7,30}$)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+}{&quot;:;'?/>.<,])(?!.*\s).*$" ValidationGroup="vgPassword" Width="368px" ControlToValidate="Password">Password must be at least 7 characters, include 1 special character (!_.-*@#$%, etc), and contain no spaces.</asp:RegularExpressionValidator></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword">Confirm Password:</asp:Label></td>
+                            <td style="width: 373px">
+                                <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" ValidationGroup="vgPassword"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword"
+                                    ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required."
+                                    ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="PasswordCompareValidator" runat="server" ControlToCompare="Password"
+                                    ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirm Password must match."
+                                    ValidationGroup="vgPassword" Width="368px"></asp:CompareValidator></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label></td>
+                            <td style="width: 373px">
+                                <asp:TextBox ID="Email" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email"
+                                    ErrorMessage="E-mail is required." ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question">Security Question:</asp:Label></td>
+                            <td style="width: 373px">
+                                <asp:DropDownList ID="Question" runat="server" ValidationGroup="CreateUserWizard1">
+                                    <asp:ListItem Selected="True" Value="-1">Choose a security question</asp:ListItem>
+                                    <asp:ListItem>What is your favorite pet?</asp:ListItem>
+                                    <asp:ListItem>What is your favorite fruit?</asp:ListItem>
+                                    <asp:ListItem>What is your favorite sport?</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="QuestionRequired" runat="server" ControlToValidate="Question"
+                                    ErrorMessage="Security question is required." ToolTip="Security question is required."
+                                    ValidationGroup="CreateUserWizard1" InitialValue="-1" Width="7px">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                <asp:Label ID="AnswerLabel" runat="server" AssociatedControlID="Answer">Security Answer:</asp:Label></td>
+                            <td style="width: 373px">
+                                <asp:TextBox ID="Answer" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer"
+                                    ErrorMessage="Security answer is required." ToolTip="Security answer is required."
+                                    ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2" style="color: red">
+                                <asp:Literal ID="ErrorMessage1" runat="server" EnableViewState="False"></asp:Literal>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                Age: <asp:RequiredFieldValidator ID="AgeRequired" runat="server" ControlToValidate="AgeDropDownList"
+                                    ErrorMessage="Age is required." InitialValue="-1" ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator></td>
+                            <td style="width: 373px">
+                                <asp:DropDownList ID="AgeDropDownList" runat="server"
+                                    DataSourceID="AgeDataSource" DataTextField="age" DataValueField="age" AppendDataBoundItems="True">
+                                    <asp:ListItem Value="-1">0</asp:ListItem>
+                                </asp:DropDownList>
+                                
+                                <asp:ObjectDataSource ID="AgeDataSource" runat="server" OnSelecting="AgeDataSource_Selecting"
+                                    SelectMethod="loadAgeField" TypeName="DataAccess"></asp:ObjectDataSource>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">Gender: <asp:RequiredFieldValidator ID="GenderRequired" runat="server" ErrorMessage="Gender is required."
+                                    ValidationGroup="CreateUserWizard1" ControlToValidate="rblstGender">*</asp:RequiredFieldValidator></td>
+                            <td style="width: 373px">
+                                <asp:RadioButtonList ID="rblstGender" runat="server" RepeatDirection="Horizontal" ValidationGroup="CreateUserWizard1">
+                                    <asp:ListItem Value="M">Male</asp:ListItem>
+                                    <asp:ListItem Value="F">Female</asp:ListItem>
+                                </asp:RadioButtonList></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px" >
+                                <asp:Literal ID="litRoleQuestion" runat="server" Text="Role: &nbsp;&nbsp;" EnableViewState="False"></asp:Literal>
+                            </td>
+                            <td style="width: 373px">
+                                <asp:DropDownList ID="dlistRoles" runat="server"></asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px" >
+                                <asp:Literal ID="litSchoolQuestion" runat="server" Text="School:" EnableViewState="False"></asp:Literal> <asp:RequiredFieldValidator ID="SchoolRequired" runat="server" ControlToValidate="dlistSchools"
+                                    ErrorMessage="School is required." InitialValue="-1" ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                            </td>
+                            <td style="width: 373px">
+                                <asp:DropDownList ID="dlistSchools" runat="server" AppendDataBoundItems="True" DataTextField="NameCityState" DataValueField="SchoolId" ValidationGroup="CreateUserWizard1">
+                                    <asp:ListItem Value="-1">Choose a School</asp:ListItem>
+                                    <asp:ListItem Value="1">Other</asp:ListItem>
+                                    <asp:ListItem Value="0">N/A</asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="width: 136px">
+                                Grade: <asp:RequiredFieldValidator ID="GradeRequired" runat="server" ControlToValidate="dlistGrades"
+                                    ErrorMessage="Grade is required." InitialValue="-1" ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator></td>
+                            <td style="width: 373px">
+                                <asp:DropDownList ID="dlistGrades" runat="server" AppendDataBoundItems="True" DataTextField="GradeLevel"
+                                    DataValueField="GradeLevelId" ValidationGroup="CreateUserWizard1">
+                                    <asp:ListItem Value="-1">Choose a Grade</asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+                <CustomNavigationTemplate>
+                    <table border="0" cellspacing="5" style="width: 100%; height: 100%;">
+                        <tr align="right">
+                            <td align="left" colspan="0">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Create User"
+                                    ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                    </table>
+                </CustomNavigationTemplate>
+            </asp:CreateUserWizardStep>
+            <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+            </asp:CompleteWizardStep>
+        </WizardSteps>
+        <FinishNavigationTemplate>
+            <asp:Button ID="FinishPreviousButton" runat="server" CausesValidation="False" CommandName="MovePrevious"
+                Text="Previous" />
+            <asp:Button ID="FinishButton" runat="server" CommandName="MoveComplete" Text="Finish" />
+        </FinishNavigationTemplate>
+        <StepNavigationTemplate>
+            <asp:Button ID="StepPreviousButton" runat="server" CausesValidation="False" CommandName="MovePrevious"
+                Text="Previous" />
+            <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Next" />
+        </StepNavigationTemplate>
+        <StartNavigationTemplate>
+            <asp:Button ID="StartNextButton" runat="server" CommandName="MoveNext" Text="Next" />
+        </StartNavigationTemplate>
+    </asp:CreateUserWizard>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="SingleParagraph"
+        HeaderText="*required fields: " Height="12px" ValidationGroup="CreateUserWizard1" />
+
+</asp:Content>
+

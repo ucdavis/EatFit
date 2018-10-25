@@ -22,7 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EatFit.Web", "EatFit.Web", 
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49797"
+		VWDPort = "65143"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatFit.Data", "EatFit.Data\EatFit.Data.csproj", "{C266FFC6-6BE4-42A5-A79D-0B39B19D5152}"
