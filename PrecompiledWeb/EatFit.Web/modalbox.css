@@ -1,0 +1,6 @@
+﻿#mbox{background-color:#eee; padding:8px; border:2px outset #666;cursor:pointer}
+#mbm{font-family:sans-serif;font-weight:bold;float:right;padding-bottom:5px;}
+#ol{background-image:url(overlay.png);}
+
+* html #ol{background-image:none;     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");}
+                  

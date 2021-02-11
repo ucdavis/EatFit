@@ -1,0 +1,71 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="LoginPage.aspx.cs" Inherits="LoginPage" Title="EatFit - Login" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="EatFitTest" Runat="Server">
+    <asp:Login ID="Login1" runat="server" CreateUserText="Create new user" CreateUserUrl="~/CreateUser.aspx" OnLoggedIn="Login1_LoggedIn" DisplayRememberMe="False" PasswordRecoveryText="Forgot your password?" PasswordRecoveryUrl="~/PasswordReset.aspx" >
+        <LayoutTemplate>
+            <table border="0" cellpadding="1" cellspacing="0" style="border-collapse: collapse">
+                <tr>
+                    <td style="height: 54px">
+                        <table border="0" cellpadding="0">
+                                                    <tr>
+                                <td colspan="2">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CreateUser.aspx">Create new user</asp:HyperLink> <br />
+                                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ChangePassword.aspx">Change Password</asp:HyperLink><br />
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
+        
+                                </td>
+                            </tr>
+                            <asp:Panel ID="pnlLoginControl" runat="server" Visible="true">
+                            <tr>
+                                <td align="center" colspan="2"><br />
+                                    Log In</td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label></td>
+                                <td>
+                                    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                        ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label></td>
+                                <td>
+                                    <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                        ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2" style="color: red">
+                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="2">
+                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" />
+                                </td>
+                            </tr></asp:Panel>
+                        </table>
+                    </td>
+                </tr>
+                <asp:Panel ID="pnlLogoutControl" runat="server" Visible="false">
+                <tr>
+                <td colspan="2">
+                You are currently logged in as <asp:Label id="lblUsername" runat="server" Font-Bold="true"/>.<br /><br />Please logout or select the <asp:HyperLink id="HyperLink3" NavigateUrl="~/EatingAnalysis.aspx" runat="server">Eating Analysis</asp:HyperLink> page to continue as the current user. </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="2">
+                    <p>
+                         <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Logout" />
+                         </p>
+                    </td>
+                </tr>
+                </asp:Panel>
+            </table>
+        </LayoutTemplate>
+    </asp:Login>
+    
+</asp:Content>
+

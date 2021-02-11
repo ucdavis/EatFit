@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><!-- InstanceBegin template="/Templates/maintemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A program to analyze and teach children good eating habits" />
+<meta name="keywords" content="eat fit healthy recipes eating analysis exercise how to success stories games challenge tips" />
+<meta name="author" content="Eat Fit" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>EatFit - Recipes</title>
+<!-- InstanceEndEditable -->
+<link href="eatfitstyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="eatfitjava.js">function TABLE1_onclick() {
+
+}
+
+</script>
+<!-- InstanceParam name="Menu" type="boolean" value="true" --><!-- InstanceParam name="src" type="text" value="images/sidebar_11.gif" -->
+</head> 
+
+<body onload="MM_preloadImages('images/sidebar2_04.gif','images/sidebar2_07.gif','images/sidebar2_05.gif','images/sidebar2_06.gif','images/sidebar_07.gif','images/sidebar_08.gif','images/sidebar2_09.gif')">
+<div id="wrapper">
+
+<table cellpadding="0" cellspacing="0" border="0" summary="This table puts the information on the right and the buttons in a side bar on the left">
+	<tr>
+	  	  <td style="width:245px; vertical-align: top;">
+		<br />
+		<br />
+		<br />
+		<br /><img src="images/sidebar_02.gif" alt="sidebar" width="158" height="42" /><br />
+		<ol class="menulist">
+			<li class="eatinganalysis"><a href="EatingAnalysis.aspx" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image2','','images/sidebar2_04.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','images/sidebar2_04.gif',1)"><img src="images/sidebar_04.gif" alt="Eating Analysis" name="Image2" width="158" height="23" border="0" id="Image2" /></a></li>
+			<li class="games"><a href="games.htm" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image3','','images/sidebar2_05.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','images/sidebar2_05.gif',1)"><img src="images/sidebar_05.gif" alt="Games" name="Image3" width="158" height="21" border="0" id="Image3" /></a></li>
+			<li class="links"><a href="links.htm" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image4','','images/sidebar2_06.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','images/sidebar2_06.gif',1)"><img src="images/sidebar_06.gif" alt="Links" name="Image4" width="158" height="20" border="0" id="Image4" /></a></li>
+			<li class="recipes"><a href="recipes.htm" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image5','','images/sidebar2_07.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','images/sidebar2_07.gif',1)"><img src="images/sidebar_07.gif" alt="Recipes" name="Image5" width="158" height="19" border="0" id="Image5" /></a></li>
+			<li class="challengetips"><a href="challengetips.htm" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image6','','images/sidebar2_08.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/sidebar2_08.gif',1)"><img src="images/sidebar_08.gif" alt="Challenge Tips" name="Image6" width="158" height="20" border="0" id="Image6" /></a></li>
+			<li class="stories"><a href="successstories.htm" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image7','','images/sidebar2_09.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','images/sidebar2_09.gif',1)"><img src="images/sidebar_09.gif" alt="Success Stories" name="Image7" width="158" height="20" border="0" id="Image7" /></a></li>
+			<li class="tips"><a href="exercise/exercise.html" onblur="MM_swapImgRestore()" onfocus="MM_swapImage('Image8','','images/sidebar2_10.gif',1)" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/sidebar2_10.gif',1)"><img src="images/sidebar_10.gif" alt="Exercise Tips" name="Image8" width="158" height="23" border="0" id="Image8" /></a> </li>
+		</ol>  
+		<img src="images/sidebar_11.gif" alt="Student" width="158" height="337" /></td>
+		<td valign="top" style="width:525px">
+		<!-- InstanceBeginEditable name="head" --><img src="images/recipes.gif" width="163" height="47" alt="Recipes" /><br />
+        <img src="images/home.gif" alt="home" width="498" height="42" border="0" usemap="#Map" />
+        <map name="Map" id="Map">
+          <area shape="rect" coords="434,16,485,38" href="default.html" alt="Home" />
+        </map>
+        <br />
+		<div id="recipes" align="center">
+       Check these recipes out... <br />
+       <table border="0" cellpadding="0" cellspacing="20" class="recipetable" summary="A table of different recipes">
+         <tr>
+           <td style="background-image:url(images/recipes_1.jpg);"><div style="padding-top:90px;">[<a href="recipes1.htm" class="recipes">Tostadas</a>]</div></td>
+           <td style="background-image:url(images/recipes_2.jpg);"><div style="padding-top:100px;">[<a href="recipes2.htm" class="recipes">Peanut Butter Energy Bar</a>]</div></td>
+           <td style="background-image:url(images/recipes_3.jpg);"><div class="games" style="padding-top:90px;">[<a href="recipes3.htm" class="recipes">Personal Pizza</a>]</div></td>
+         </tr>
+         <tr>
+           <td style="background-image:url(images/recipes_4.jpg);"><div style="padding-top:90px;">[<a href="recipes4.htm" class="recipes">Fast Mix</a>]</div></td>
+           <td style="background-image:url(images/recipes_5.jpg);"><div style="padding-top:105px;">[<a href="recipes5.htm" class="recipes">Chocolate Chip <br />
+             Oatmeal Raisin <br />
+             Cookies</a>]</div></td>
+           <td style="background-image:url(images/recipes_6.jpg);"><div style="padding-top:90px;">[<a href="recipes6.htm" class="recipes">Tomato Egg <br />
+             Flower Soup</a>]</div></td>
+         </tr>
+         <tr>
+           <td style="background-image:url(images/recipes_7.jpg); height: 151px;"><div style="padding-top:90px;">[<a href="recipes7.htm" class="recipes">Fruit Pizza</a>]</div></td>
+           <td style="background-image:url(images/recipes_8.jpg); height: 151px;"><div style="padding-top:100px;">[<a href="recipes8.htm" class="recipes">Sweet Chips</a>]</div></td>
+           <td style="background-image:url(images/recipes_9.jpg); height: 151px;"><div style="padding-top:90px;">[<a href="recipes9.htm" class="recipes">Salad Shaker </a>]</div></td>
+         </tr>
+       </table>
+	   <table width="423" border="0" cellpadding="0" class="recipetable2" summary="more recipes" id="TABLE1" onclick="return TABLE1_onclick()">
+         <tr>
+           <td style="width:108px;background-image:url(images/recipes_10.jpg);" align="center"><div style="padding-top:140px; padding-left: 0px;">[<a href="recipes10.htm" class="recipes">Smoothie</a>]</div></td><td style="width: 40px" />
+           <td style="width:108px;background-image:url(images/recipes_11.jpg);" align="center"><div style="padding-top:140px; padding-left: 0px;">[<a href="recipes11.htm" class="recipes">Minestone<br /> 
+             Soup </a>]</div></td><td style="width: 40px" />
+           <td style="width:108px; background-image:url(images/recipes_12.jpg);" align="center"><div style="padding-top:140px; padding-left: 0px;">[<a href="recipes12.htm" class="recipes">Mexican <br />
+             Omelet </a>]</div></td>
+         </tr>
+       </table>
+	   </div>
+		<!-- InstanceEndEditable -->		</td>
+	</tr>
+	<tr>
+	  <td colspan="2" style="text-align:center; font-size: 0.8em;">
+		<br />
+		<br />
+		| <a href="Default.aspx">Home</a> | <a href="#">Eating Analysis</a> | <a href="games.htm">Games</a> | <a href="links.htm">Links</a> | <a href="recipes.htm">Recipes</a> | <a href="challengetips.htm">Challenge Tips</a> | <a href="successstories.htm">Success Stories</a> | <br />
+		<br />
+		&copy; 2007 - Regents of the University of California <br />
+	  If any of these links no longer work, please let us know at <a href="mailto:eatfit@ucdavis.edu">eatfit@ucdavis.edu</a> <br />
+	  <br /></td>
+	</tr>
+</table>
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

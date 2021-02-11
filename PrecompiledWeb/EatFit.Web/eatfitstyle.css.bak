@@ -1,0 +1,185 @@
+/* CSS Document */
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+a:link {
+	color: #006699; font-weight: bold
+}
+a:visited {
+	color: #006699; font-weight: bold
+}
+a:hover {
+	color: #33ccff; text-decoration:none;  font-weight: bold
+}
+a:active {
+	color: #33ccff; text-decoration:none;  font-weight: bold
+}
+
+#wrapper {
+	background-image:url(images/greenlines.gif);
+	background-repeat: repeat-x;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box { 
+  background: #FFCCCC; 
+}
+.boxtop { 
+  background: url(images/ne.gif) no-repeat top right; 
+}
+.boxtop div { 
+  height: 10px; 
+  background: url(images/nw.gif) no-repeat top left; 
+}
+.boxbottom { 
+  background: url(images/se.gif) no-repeat bottom right; 
+}
+.boxbottom div { 
+  height: 10px; 
+  background: url(images/sw.gif) no-repeat bottom left; 
+}
+.boxcontent {
+  padding: 0px 10px 0px 10px;
+  line-height: 1.5em;
+}
+
+.box2 { 
+  background: #DBEDA8; 
+}
+.boxtop2 { 
+  background: url(images/ne2.gif) no-repeat top right; 
+}
+.boxtop2 div { 
+  height: 10px; 
+  background: url(images/nw2.gif) no-repeat top left; 
+}
+.boxbottom2 { 
+  background: url(images/se2.gif) no-repeat bottom right; 
+}
+.boxbottom2 div { 
+  height: 10px; 
+  background: url(images/sw2.gif) no-repeat bottom left; 
+}
+.boxcontent2 {
+  padding: 0px 10px 0px 10px;
+  line-height: 1.5em;
+}
+
+.box3 { 
+  background: #CDEFFF; 
+}
+.boxtop3 { 
+  background: url(images/ne3.gif) no-repeat top right; 
+}
+.boxtop3 div { 
+  height: 10px; 
+  background: url(images/nw3.gif) no-repeat top left; 
+}
+.boxbottom3 { 
+  background: url(images/se3.gif) no-repeat bottom right; 
+}
+.boxbottom3 div { 
+  height: 10px; 
+  background: url(images/sw3.gif) no-repeat bottom left; 
+}
+.boxcontent3 {
+  padding: 0px 10px 0px 10px;
+  line-height: 1.5em;
+}
+
+.style1 {color: #0066CC; font-weight:bold; letter-spacing: -0.5px;}
+
+.recipetable  {
+	text-align: center;
+}
+
+.recipetable td {
+	background-repeat:no-repeat;
+	width: 137px;
+	height: 151px;
+	line-height: 1em;
+	font-size: 12px;
+}
+
+.recipetable2 td {
+	background-repeat:no-repeat;
+	height: 182px;
+	line-height: 1em;
+	font-size: 12px;
+}
+
+.style2 {
+	color: #cc0000;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+
+.menulist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height:0;
+}
+
+.menulist li.eatinganalysis{ height:23px;}
+.menulist li.games{ height:21px;}
+.menulist li.links{ height:20px;}
+.menulist li.recipes{ height:19px;}
+.menulist li.challengetips{ height:20px;}
+.menulist li.stories{ height:20px;}
+.menulist li.tips{ height:23px;}
+
+.tablestyle {
+	background-color:#eef7fc;
+	border: solid 1px #7ca8bf;
+}
+
+.tablestyle2 {
+	background-color:#e5f1db;
+	border: solid 1px #abc299;
+}
+	
+.botbord {
+	border-bottom: solid 1px #7ca8bf;
+}
+
+.lefttblstyle 
+{
+	width: 155px; 
+	border-bottom: solid 1px #7ca8bf; 
+	border-right: solid 1px #7ca8bf; 
+	background-color: #EEEEEE;
+}
+
+/*-- For the Modal Popup -- */
+.modalBackground {
+	background-color:#111111;
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+
+
+.modalPopup {
+	background-color:#D5DBE1;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+.headfont {
+	font-size: 18px;
+	letter-spacing: -0.5px;
+}
+	

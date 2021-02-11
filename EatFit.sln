@@ -1,13 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EatFit.Web", "EatFit.Web\", "{784E34D3-DDB3-465D-B16C-8A7AE4C69D83}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EatFit.Web", "EatFit.Web", "{784E34D3-DDB3-465D-B16C-8A7AE4C69D83}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""
 		SccAuxPath = ""
 		SccLocalPath = ""
 		SccProvider = ""
-		TargetFramework = "2.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/EatFit.Web"
 		Debug.AspNetCompiler.PhysicalPath = "EatFit.Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\EatFit.Web\"
@@ -22,7 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EatFit.Web", "EatFit.Web\",
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49797"
+		VWDPort = "65143"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatFit.Data", "EatFit.Data\EatFit.Data.csproj", "{C266FFC6-6BE4-42A5-A79D-0B39B19D5152}"
@@ -30,6 +30,23 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatFitSProcs", "EatFitSProcs\EatFitSProcs.csproj", "{EE25EBC3-B0C6-445C-986D-0D6603150398}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cubert:8080/
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = EatFit.Web
+		SccProjectName1 = EatFit.Web
+		SccLocalPath1 = EatFit.Web
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = EatFit.Data\\EatFit.Data.csproj
+		SccProjectName2 = EatFit.Data
+		SccLocalPath2 = EatFit.Data
+		SccProjectUniqueName3 = EatFitSProcs\\EatFitSProcs.csproj
+		SccProjectName3 = EatFitSProcs
+		SccLocalPath3 = EatFitSProcs
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
 		Debug|Any CPU = Debug|Any CPU
@@ -76,22 +93,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://cubert:8080/
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = EatFit.Web
-		SccProjectName1 = EatFit.Web
-		SccLocalPath1 = EatFit.Web
-		SccProjectEnlistmentChoice1 = 2
-		SccProjectUniqueName2 = EatFit.Data\\EatFit.Data.csproj
-		SccProjectName2 = EatFit.Data
-		SccLocalPath2 = EatFit.Data
-		SccProjectUniqueName3 = EatFitSProcs\\EatFitSProcs.csproj
-		SccProjectName3 = EatFitSProcs
-		SccLocalPath3 = EatFitSProcs
 	EndGlobalSection
 EndGlobal
