@@ -6,9 +6,10 @@
     <div class="header">
       <div class="bs-container">
         <div class="row">
-        <div class="logo col-md-7"><a href="http://eatfit.ucdavis.edu/"><img src="http://v.caes.ucdavis.edu/EatFit/Diazo/img/logo.png" alt="Eatfit" /></a></div>
-        <div class="ea-box col-md-5"><a href="http://eatfit.ucdavis.edu/ea"><h3>Explore what you eat</h3></a></div>
-        </div>
+        <div class="logo col-md-7"><a href="https://eatfit.net/"><img src="http://v.caes.ucdavis.edu/EatFit/Diazo/img/logo.png" alt="Eatfit" /></a></div>
+       <%-- <div class="ea-box col-md-5"><a href="EatingAnalysis.aspx"><h3>Explore what you eat</h3></a></div>--%>
+        <div class="ea-box col-md-5"><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EatingAnalysis.aspx"><h3>Explore what you eat</h3></asp:HyperLink>
+            </div>
       </div>
     </div>
 
@@ -24,12 +25,12 @@
         </div> -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li id="portaltab-index_html" class="plain"><a href="http://eatfit.ucdavis.edu" title="">Home</a></li>
-            <li id="portaltab-ea" class="selected"><a href="http://eatfit.ucdavis.edu/ea" title="">Explore what you eat</a></li>
-            <li id="portaltab-goals" class="plain"><a href="http://eatfit.ucdavis.edu/goals" title="">My goals</a></li>
-            <li id="portaltab-recipes" class="plain"><a href="http://eatfit.ucdavis.edu/recipes" title="">Recipes</a></li>
-            <li id="portaltab-exercises" class="plain"><a href="http://eatfit.ucdavis.edu/exercises" title="">Exercises</a></li>
-            <li id="portaltab-about" class="plain"><a href="http://eatfit.ucdavis.edu/about" title="">About</a></li>
+              <li id="portaltab-index_html" class="plain"><a href="https://eatfit.net" title="">Home</a></li>
+              <li id="portaltab-ea" class="selected"><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/EatingAnalysis.aspx">Eating analysis</asp:HyperLink></li>
+              <li id="portaltab-goals" class="plain"><a href="https://eatfit.net/goals/setting-goals" title="">My goals</a></li>
+              <li id="portaltab-recipes" class="plain"><a href="https://eatfit.net/recipes" title="">Recipes</a></li>
+              <li id="portaltab-exercises" class="plain"><a href="https://eatfit.net/exercises/ex-menu" title="">Exercises</a></li>
+              <li id="portaltab-about" class="plain"><a href="https://eatfit.net/about/teachers" title="">About</a></li>
           </ul></div><!--/.nav-collapse -->
       </div>
     </div>
@@ -39,9 +40,9 @@
         <div class="leftcol col-md-3">
         <nav>
           <ul>
-            <li><a href="http://eatfit.ucdavis.edu/ea/analysis">Explore what you eat</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/ea/about">about the analysis</a></li>
-            <li><a href="http://eatfit.ucdavis.edu/ea/help">need help?</a></li>
+              <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/EatingAnalysis.aspx">eating analysis</asp:HyperLink></li>
+              <li><a href="https://eatfit.net/about/teachers">about the analysis</a></li>
+              <li><a href="https://eatfit.net/help">need help?</a></li>
           </ul>
         </nav>
       </div><!-- /.leftcol -->
@@ -68,7 +69,7 @@
                                     <p>Please plan to enter all of your foods at one time. Once you start this process, data cannot be viewed or altered again later.</p>
                                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CreateUser.aspx">Create new user</asp:HyperLink> <br />
                                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ChangePassword.aspx">Change Password</asp:HyperLink><br />
-                                    <!--<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>-->
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PasswordReset.aspx">Forgot your password?</asp:HyperLink>
         
                                 </td>
                             </tr>
