@@ -9,7 +9,7 @@
     <div class="header">
       <div class="bs-container">
         <div class="row">
-            <div class="logo col-md-7"><a href="https://eatfit.net/"><img src="http://v.caes.ucdavis.edu/EatFit/Diazo/img/logo.png" alt="Eatfit" /></a></div>
+            <div class="logo col-md-7"><a href="https://eatfit.net/"><img src="images/logo.png" alt="Eatfit" /></a></div>
             <div class="ea-box col-md-5"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EatingAnalysis.aspx"><h3>Explore what you eat</h3></asp:HyperLink></div>
         </div>
       </div>
