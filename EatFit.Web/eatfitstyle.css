@@ -258,7 +258,7 @@ body {
 	padding-top: 30px;
 	padding-bottom: 20px;
 	font-family: Arial, sans-serif;
-	background: url(http://v.caes.ucdavis.edu/EatFit/Diazo/img/bg.jpg);
+	background: url(images/bg.jpg); 
 	color: #fff;
 }
 .clear {clear: both;}
@@ -319,7 +319,7 @@ width: 400px;
 	min-height: 145px;
 }
 	.header .ea-box a {
-		background: url(http://v.caes.ucdavis.edu/EatFit/Diazo/img/bg-eatinganalysis.jpg) no-repeat right bottom #4c4847;
+		background: url(images/bg-eatinganalysis.jpg) no-repeat right bottom #4c4847;
 		border-radius: 10px;
 		font-size: 2em;
 		text-transform: lowercase;
@@ -458,7 +458,7 @@ width: 400px;
 }
 	.content .header h1 {text-shadow: 1px 1px 18px rgba(33,33,33,.5); }
 	.subsection-ex-menu .content .header h1 {text-shadow: 1px 1px 18px rgba(233, 233, 233, 0.5);}
-	.subsection-recipes .content .header {background-image: url(http://v.caes.ucdavis.edu/EatFit/Diazo/img/hd-recipes.jpg);}
+	.subsection-recipes .content .header {background-image: url(images/hd-recipes.jpg);}
 	.subsection-recipes .content .header img {display: none;}
 	.content .header img {
 		position: absolute;

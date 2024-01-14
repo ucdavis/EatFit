@@ -12,7 +12,7 @@
 <script type="text/javascript" src="../eatfitjava.js"></script>
 <!-- TemplateParam name="Menu" type="boolean" value="true" --><!-- TemplateParam name="src" type="text" value="../images/sidebar_11.gif" -->
 <!-- <link href="http://v.caes.ucdavis.edu/Eatfit/Diazo/eatfit.css" rel="stylesheet" type="text/css" />
-<link href="http://v.caes.ucdavis.edu/Eatfit/Diazo/eatfit-ea.css" rel="stylesheet" type="text/css" /> -->
+<link href="../eatfit.css" rel="stylesheet" type="text/css" /> -->
 </head> 
 
 <body onload="MM_preloadImages('../images/sidebar2_04.gif','../images/sidebar2_07.gif','../images/sidebar2_05.gif','../images/sidebar2_06.gif','../images/sidebar_07.gif','../images/sidebar_08.gif','../images/sidebar2_09.gif')">

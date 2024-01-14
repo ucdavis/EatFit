@@ -43,7 +43,7 @@ pp.document.writeln('<TABLE width=100%><TR><TD></TD></TR><TR><TD align=center>')
 
 pp.document.writeln('<INPUT ID="PRINT" type="button" value="Print" ');
 
-pp.document.writeln('onclick="javascript:location.reload(true);window.print();">');
+    pp.document.writeln('onclick="javascript:window.print();">');
 
 pp.document.writeln('<INPUT ID="CLOSE" type="button" value="Close" onclick="window.close();">');
 
